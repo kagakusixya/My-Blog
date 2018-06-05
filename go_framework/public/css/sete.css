@@ -1,0 +1,41 @@
+
+    .main {
+      background: #ffffff;
+    	width: 550px;
+    	padding: 10px;
+    	margin: 10px;
+        border: 1px solid #cccccc;
+    }
+    .side {
+      background: #ffffff;
+      width: 250px;
+      padding: 10px;
+      margin: 10px;
+        border: 1px solid #cccccc;
+    }
+    .float {
+    	width: 884px;
+    	margin: auto;
+    	overflow: hidden;
+      list-style-type: none;
+      padding-left: 0;
+        border: 1px solid #cccccc;
+    }
+    header{
+      background: #ffffff;
+      width: 780px;
+      text-align: center;
+      margin:auto;
+      padding: 40px;
+      margin: 30px auto;
+      border: 1px solid #cccccc;
+    }
+    .float .main {
+    	float: left;
+    }
+    .float .side {
+      float: left;
+    }
+    body{
+      background: #eeeeee;
+    }

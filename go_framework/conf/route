@@ -1,0 +1,2 @@
+GET      /home  controllers               Home
+GET      /teapot controllers               Teapot
