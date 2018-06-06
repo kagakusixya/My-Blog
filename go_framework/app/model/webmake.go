@@ -12,10 +12,13 @@ import (
 func (route_data routedata) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		//w.WriteHeader(418)
+		funcMap := template.FuncMap{
+			"safehtml": func(text string) template.HTML { return template.HTML(text) },
+		}
 		s := controllers.Routeontroller_package(route_data.Filemethod)
 		w.WriteHeader(s.HttpStatece)
-		t := template.Must(template.ParseFiles("app/views/" + string(s.Url)))
-		if err := t.ExecuteTemplate(w, string(s.Url), s.Html_data); err != nil {
+		t := template.Must(template.New("").Funcs(funcMap).ParseFiles("app/views/base.html", "app/views/"+string(s.Url)))
+		if err := t.ExecuteTemplate(w, "base", s.Html_data); err != nil {
 			log.Fatal(err)
 		}
 		//	w.WriteHeader(s.HttpStatece)
