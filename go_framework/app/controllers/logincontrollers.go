@@ -5,8 +5,8 @@ func (t *T) Login() {
 	t.Url = "login.html"
 }
 func (t *T) Login_post() {
-	if t.Form["id"] == "id" {
-		if t.Form["password"] == "password" {
+	if t.Form["id"] == "i" {
+		if t.Form["password"] == "p" {
 			t.Html_data = map[string]string{
 				"id":       t.Form["id"],
 				"password": t.Form["password"],
