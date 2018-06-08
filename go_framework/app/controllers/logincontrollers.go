@@ -2,7 +2,7 @@ package controllers
 
 //Login.....system
 func (t *T) Login() {
-	t.Url = "login.html"
+	t.Url = "login/login.html"
 }
 func (t *T) Login_post() {
 	if t.Form["id"] == "i" {
@@ -11,10 +11,10 @@ func (t *T) Login_post() {
 				"id":       t.Form["id"],
 				"password": t.Form["password"],
 			}
-			t.Url = "loginok.html"
+			t.Url = "login/loginok.html"
 		}
 	}
-	if t.Url != "loginok.html" {
-		t.Url = "err.html"
+	if t.Url != "login/loginok.html" {
+		t.Url = "login/err.html"
 	}
 }
