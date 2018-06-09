@@ -1,0 +1,41 @@
+
+    .write {
+      background: #ffffff;
+    	width: 400px;
+    	padding: 10px;
+    	margin: 10px;
+        border: 1px solid #cccccc;
+    }
+    .preview {
+      background: #ffffff;
+      width: 400px;
+      padding: 10px;
+      margin: 10px;
+        border: 1px solid #cccccc;
+    }
+    .float {
+    	width: 884px;
+    	margin: auto;
+    	overflow: hidden;
+      list-style-type: none;
+      padding-left: 0;
+        border: 1px solid #cccccc;
+    }
+    header{
+      background: #ffffff;
+      width: 780px;
+      text-align: center;
+      margin:auto;
+      padding: 40px;
+      margin: 30px auto;
+      border: 1px solid #cccccc;
+    }
+    .float .write {
+    	float: left;
+    }
+    .float .preview {
+      float: left;
+    }
+    body{
+      background: #eeeeee;
+    }
