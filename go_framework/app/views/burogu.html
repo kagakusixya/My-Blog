@@ -12,7 +12,7 @@
     </header>
     <ul class="float">
   <li class="main">
-    {{.main}}
+    {{.main|safehtml}}
     </li>
   <li class="side">{{.side|safehtml}}</li>
 </ul>
