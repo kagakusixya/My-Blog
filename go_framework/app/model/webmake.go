@@ -40,6 +40,9 @@ func (route_data routedata) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		//	w.WriteHeader(418)
 	}
 	if r.Method == "POST" {
+		funcMap := template.FuncMap{
+			"safehtml": func(text string) template.HTML { return template.HTML(text) },
+		}
 		r.ParseForm()
 		a := make(map[string]string)
 		for k, v := range r.Form {
@@ -47,7 +50,7 @@ func (route_data routedata) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 
 		s := controllers.Routeontroller_package_post(route_data.Filemethod, a)
-		t := template.Must(template.ParseFiles("app/views/" + string(s.Url)))
+		t := template.Must(template.New("").Funcs(funcMap).ParseFiles("app/views/" + string(s.Url)))
 		mozi := String(s.Url)
 		var k string
 		var su int = 0

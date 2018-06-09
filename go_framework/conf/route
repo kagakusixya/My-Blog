@@ -3,3 +3,4 @@ GET      /teapot controllers              Teapot
 GET      /login controllers  Login
 POST     /login_post controllers Login_post
 GET      /write     controllers Write
+POST     /preview_post controllers Preview_post
