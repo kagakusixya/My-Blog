@@ -32,7 +32,6 @@ func Model() {
 		//y.html_data = view_in.Html_data
 		//y.html_post = view_in.Html_post
 		Webmake(route_data[i]) //routea_dataをwebを立てるためにWebmakeに飛ばす
-
 	}
 	//webの動的処理
 	var port_number string = ":9000"
