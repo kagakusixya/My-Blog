@@ -27,10 +27,6 @@ func Model() {
 	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public/"))))
 	for i := 0; i < len(route_data); i++ {
 		fmt.Printf("Pash:%s  ", route_data[i].Pash)
-		//view_in = controllers.Routeontroller_package(route_data[i].Filemethod)
-		//y.Url = view_in.Url
-		//y.html_data = view_in.Html_data
-		//y.html_post = view_in.Html_post
 		Webmake(route_data[i]) //routea_dataをwebを立てるためにWebmakeに飛ばす
 	}
 	//webの動的処理
