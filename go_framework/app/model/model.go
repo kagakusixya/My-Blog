@@ -17,11 +17,11 @@ type Y struct {
 	html_data   map[string]string
 	HttpStatece int
 }
-
 type Dynamicwebdata struct {
 	Id       int
 	Maindata string
 	Side     string
+	SideAll  string
 }
 
 func Model() {
