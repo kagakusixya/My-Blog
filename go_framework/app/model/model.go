@@ -18,6 +18,12 @@ type Y struct {
 	HttpStatece int
 }
 
+type Dynamicwebdata struct {
+	Id       int
+	Maindata string
+	Side     string
+}
+
 func Model() {
 	//reder input
 	route_data := Readroute()
@@ -30,6 +36,9 @@ func Model() {
 		Webmake(route_data[i]) //routea_dataをwebを立てるためにWebmakeに飛ばす
 	}
 	//webの動的処理
+	dynamic_data := Dyanamic_data()
+	DynamicWebmake(dynamic_data) //routea_dataをwebを立てるためにWebmakeに飛ばす
+
 	var port_number string = ":9000"
 	fmt.Printf("port number%s", port_number)
 	http.ListenAndServe(port_number, nil)
