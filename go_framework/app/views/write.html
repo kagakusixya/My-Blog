@@ -4,7 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="public/css/write.css">
     <title>KG-Networkブログ</title>
-    </style>
+    <script type="text/javascript">
+    function goServletP(){
+        document.getElementById('form').action="/preview_post";
+    }
+    function goServletS(){
+        document.getElementById('form').action="/send";
+    }
+</script>
   </head>
   <body>
     <header>
@@ -12,14 +19,14 @@
     </header>
     <ul class="float">
   <li class="write">
-    <form name="preview" action ="/preview_post" method = "post">
+    <form  id="form" name="form" action="/send" method="post">
     タイトル:<input size="36" type="text" name="side">
     <br>
     内容<br>
 <textarea name="main" cols="54" rows="50">
 </textarea>
-<input type="submit" name="send"value="送信する">
-<input type="submit" name="preview" value="preview">
+<input type="submit"  value="送信する" onclick="goServletS();">
+<input type="submit"  value="preview" onclick="goServletP();">
 </form>
     </li>
   <li class="preview">
