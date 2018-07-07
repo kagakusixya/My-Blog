@@ -16,6 +16,8 @@ type Y struct {
 	Url         string
 	html_data   map[string]string
 	HttpStatece int
+	Form        map[string]string
+	Cookie			*http.Cookie
 }
 type Dynamicwebdata struct {
 	Id       int

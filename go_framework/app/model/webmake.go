@@ -15,7 +15,14 @@ func (route_data routedata) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		funcMap := template.FuncMap{
 			"safehtml": func(text string) template.HTML { return template.HTML(text) },
 		}
-		s := controllers.Routeontroller_package(route_data.Filemethod)
+		cookie, err := r.Cookie("hoge")
+		var kouzo controllers.Post
+		if err != nil {
+			kouzo.CookieData = "none"
+		}else {
+			kouzo.CookieData = cookie.Value
+		}
+		s := controllers.Routeontroller_package(route_data.Filemethod,kouzo)
 		w.WriteHeader(s.HttpStatece)
 		t := template.Must(template.New("").Funcs(funcMap).ParseFiles("app/views/" + string(s.Url)))
 		mozi := String(s.Url)
@@ -48,8 +55,17 @@ func (route_data routedata) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		for k, v := range r.Form {
 			a[k] = strings.Join(v, "")
 		}
-
-		s := controllers.Routeontroller_package_post(route_data.Filemethod, a)
+		cookie, err := r.Cookie("hoge")
+		var kouzo controllers.Post
+		if err != nil {
+			kouzo.An = a
+			kouzo.CookieData = "none"
+		}else {
+			kouzo.An = a
+			kouzo.CookieData = cookie.Value
+		}
+		s := controllers.Routeontroller_package_post(route_data.Filemethod, kouzo)
+		http.SetCookie(w,s.Cookie)
 		t := template.Must(template.New("").Funcs(funcMap).ParseFiles("app/views/" + string(s.Url)))
 		mozi := String(s.Url)
 		var k string
